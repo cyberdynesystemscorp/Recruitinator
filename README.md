@@ -1,2 +1,2 @@
-# Recruitnator
+# Recruitinator
 An Open Source ATS
