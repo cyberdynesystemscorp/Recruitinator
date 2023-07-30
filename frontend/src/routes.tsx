@@ -11,7 +11,6 @@ import SignIn from "views/auth/SignIn";
 // Icon Imports
 import {
   MdHome,
-  MdOutlineShoppingCart,
   MdBarChart,
   MdPerson,
   MdLock,
