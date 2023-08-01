@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.0",
     "@chakra-ui/hooks": "^2.2.0",
     "@chakra-ui/modal": "^2.3.0",
     "@chakra-ui/popover": "^2.2.0",
