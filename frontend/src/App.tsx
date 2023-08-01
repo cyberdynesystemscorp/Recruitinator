@@ -9,7 +9,7 @@ const App = () => {
       <Route path="auth/*" element={<AuthLayout />} />
       <Route path="admin/*" element={<AdminLayout />} />
       <Route path="/" element={<Navigate to="/admin" replace />} />
-      <Route path="login" element={<AuthenticationGuard component={AdminLayout}  />} />
+      <Route path="/rtl/auth0" element={<AuthenticationGuard component={AdminLayout}  />} />
     </Routes>
   );
 };

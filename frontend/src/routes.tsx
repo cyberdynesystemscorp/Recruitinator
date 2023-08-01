@@ -44,6 +44,13 @@ const routes = [
     path: "sign-in",
     icon: <MdLock className="h-6 w-6" />,
     component: <SignIn />,
+  },
+  {
+    name: "Auth0",
+    layout: "/rtl",
+    path: "auth0",
+    icon: <MdLock className="h-6 w-6" />,
+    component: <></>,
   }
 ];
 export default routes;
