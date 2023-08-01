@@ -68,6 +68,7 @@ export default function Admin(props: { [x: string]: any }) {
         >
           {/* Routes */}
           <div className="h-full">
+            <div>{process.env.REACT_APP_AUTH0_DOMAIN}</div>
             <Navbar
               onOpenSidenav={() => setOpen(true)}
               brandText={currentRoute}
