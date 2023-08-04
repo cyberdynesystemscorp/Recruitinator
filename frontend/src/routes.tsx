@@ -16,6 +16,7 @@ import {
   MdPerson,
   MdLock,
 } from "react-icons/md";
+import JobBoard from "views/admin/jobs";
 
 const useRoutes = () => {
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ const useRoutes = () => {
       layout: "/admin",
       path: "jobs",
       icon: <MdWork className="h-6 w-6" />,
-      component: <MainDashboard />,
+      component: <JobBoard />,
     },
     {
       name: "Main Dashboard",
