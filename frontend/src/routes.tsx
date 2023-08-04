@@ -10,6 +10,7 @@ import SignIn from "views/auth/SignIn";
 
 // Icon Imports
 import {
+  MdWork,
   MdHome,
   MdBarChart,
   MdPerson,
@@ -21,10 +22,10 @@ const useRoutes = () => {
 
   return [
     {
-      name: "aaa" + t("menu.Jobs"),
+      name: t("menu.Jobs"),
       layout: "/admin",
-      path: "default",
-      icon: <MdHome className="h-6 w-6" />,
+      path: "jobs",
+      icon: <MdWork className="h-6 w-6" />,
       component: <MainDashboard />,
     },
     {
