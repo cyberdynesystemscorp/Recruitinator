@@ -38,7 +38,7 @@ const Sidebar = (props: {
 
       {/* Free Horizon Card */}
       <div className="flex justify-center">
-        <SidebarCard />
+        <SidebarCard title="best deal" text="omg buy it now!!1" buttonText="buy now!" icon="" />
       </div>
 
       {/* Nav item end */}
