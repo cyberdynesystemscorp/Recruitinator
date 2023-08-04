@@ -4,12 +4,13 @@ import { HiX } from "react-icons/hi";
 import Links from "./components/Links";
 
 import SidebarCard from "components/sidebar/components/SidebarCard";
-import routes from "routes";
+import useRoutes from "routes";
 
 const Sidebar = (props: {
   open: boolean;
   onClose: React.MouseEventHandler<HTMLSpanElement>;
 }) => {
+  const routes = useRoutes();
   const { open, onClose } = props;
   return (
     <div
