@@ -19,7 +19,7 @@ export default function Admin(props: { [x: string]: any }) {
   }, []);
   React.useEffect(() => {
     getActiveRoute(routes);
-  }, [location.pathname]);
+  }, [location.pathname, routes]);
 
   const getActiveRoute = (routes: RoutesType[]): string | boolean => {
     let activeRoute = "Main Dashboard";
