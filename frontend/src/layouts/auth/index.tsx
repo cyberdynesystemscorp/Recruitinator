@@ -1,12 +1,13 @@
 import Footer from "components/footer/FooterAuthDefault";
 import authImg from "assets/img/auth/auth.png";
-import { Link, Routes, Route, Navigate } from "react-router-dom";
-import useRoutes from "routes";
+//import { Link, Routes, Route, Navigate } from "react-router-dom";
+
+//import useRoutes from "routes";
 import FixedPlugin from "components/fixedPlugin/FixedPlugin";
 import SignIn from "views/auth/SignIn";
 
 export default function Auth() {
-  const routes = useRoutes();
+  //const routes = useRoutes();
   // const getRoutes = (routes: RoutesType[]): any => {
   //   return routes.map((prop, key) => {
   //     if (prop.layout === "/auth") {
