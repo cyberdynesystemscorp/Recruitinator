@@ -16,7 +16,7 @@ import {
   MdPerson,
   MdLock,
 } from "react-icons/md";
-import JobBoard from "views/admin/jobs";
+import JobBoard from "views/admin/jobs/overview";
 
 const useRoutes = () => {
   const { t } = useTranslation();
