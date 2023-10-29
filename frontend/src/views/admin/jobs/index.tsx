@@ -5,10 +5,8 @@ import { IoDocuments } from "react-icons/io5";
 import { MdBarChart, MdDashboard } from "react-icons/md";
 
 import Widget from "components/widget/Widget";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const JobBoard = () => {
-  const { user, isLoading, isAuthenticated } = useAuth0()
   return (
     <div>
       {/* Card widget */}
