@@ -10,7 +10,7 @@ import {
   IoMdNotificationsOutline,
   IoMdInformationCircleOutline,
 } from "react-icons/io";
-import avatar from "assets/img/avatars/avatar4.png";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = (props: {
   onOpenSidenav: () => void;
@@ -19,7 +19,14 @@ const Navbar = (props: {
 }) => {
   const { onOpenSidenav, brandText } = props;
   const [darkmode, setDarkmode] = React.useState(false);
-
+  const { user, logout } = useAuth0()
+  const handleLogout = () => {
+    logout({
+      logoutParams: {
+        returnTo: window.location.origin,
+      },
+    });
+  };
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
       <div className="ml-[6px]">
@@ -184,8 +191,8 @@ const Navbar = (props: {
           button={
             <img
               className="h-10 w-10 rounded-full"
-              src={avatar}
-              alt="Elon Musk"
+              src={user?.picture}
+              alt={user?.name}
             />
           }
           children={
@@ -193,7 +200,7 @@ const Navbar = (props: {
               <div className="mt-3 ml-4">
                 <div className="flex items-center gap-2">
                   <p className="text-sm font-bold text-navy-700 dark:text-white">
-                    👋 Hey, Adela
+                    👋 Hey, Adela - {JSON.stringify(user || "undefined")}
                   </p>{" "}
                 </div>
               </div>
@@ -212,7 +219,7 @@ const Navbar = (props: {
                 >
                   Newsletter Settings
                 </a>
-                <a
+                <a onClick={handleLogout}
                   href=" "
                   className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
                 >

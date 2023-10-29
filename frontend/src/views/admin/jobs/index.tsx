@@ -5,12 +5,14 @@ import { IoDocuments } from "react-icons/io5";
 import { MdBarChart, MdDashboard } from "react-icons/md";
 
 import Widget from "components/widget/Widget";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const JobBoard = () => {
+  const { user, isLoading, isAuthenticated } = useAuth0()
   return (
     <div>
       {/* Card widget */}
-
+      <h1>{JSON.stringify(user || "undefined")} - is loading {isLoading} - is auth {isAuthenticated}</h1>
       <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}

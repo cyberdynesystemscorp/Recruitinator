@@ -2,13 +2,24 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import DashIcon from "components/icons/DashIcon";
+import { useAuth0 } from "@auth0/auth0-react";
 // chakra imports
 
 export const SidebarLinks = (props: { routes: RoutesType[] }): JSX.Element => {
   // Chakra color mode
   let location = useLocation();
-
+  const { loginWithRedirect } = useAuth0();
   const { routes } = props;
+  const handleLogin = async () => {
+    await loginWithRedirect({
+      appState: {
+        returnTo: "/profile",
+      },
+      authorizationParams: {
+        prompt: "login",
+      },
+    });
+  };
 
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName: string) => {
@@ -23,7 +34,7 @@ export const SidebarLinks = (props: { routes: RoutesType[] }): JSX.Element => {
         route.layout === "/rtl"
       ) {
         return (
-          <Link key={index} to={route.layout + "/" + route.path}>
+          <Link key={index} to={route.path}>
             <div className="relative mb-3 flex hover:cursor-pointer">
               <li
                 className="my-[3px] flex cursor-pointer items-center px-8"
@@ -58,7 +69,10 @@ export const SidebarLinks = (props: { routes: RoutesType[] }): JSX.Element => {
     });
   };
   // BRAND
-  return <>{createLinks(routes)}</>;
+  return <>
+    {createLinks(routes)}
+    <Link to="/"><a onClick={handleLogin}>login</a></Link>
+    </>;
 };
 
 export default SidebarLinks;
